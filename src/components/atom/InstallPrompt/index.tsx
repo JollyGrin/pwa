@@ -71,8 +71,16 @@ export function InstallPrompt() {
   return (
     <div>
       <h3>Install App</h3>
+      <div>
+        <code>
+          {isIOS}
+          {isStandalone}
+          {JSON.stringify(installPromptEvent)}
+        </code>
+      </div>
+      <hr />
       <button onClick={handleInstallClick} disabled={!installPromptEvent}>
-        Add to Home Screen
+        Add to Home Screen: {!installPromptEvent ? "disabled" : "enabled"}
       </button>
       {isIOS && (
         <p>
